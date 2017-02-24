@@ -1,6 +1,6 @@
 # tensorflow_on_farber
 
-####GCC
+###GCC
 --------------
 Download the GCC 4.9.4 from source, compile, install.
 _this is because of `as` error in bazel_
@@ -51,12 +51,12 @@ export LD_LIBRARY_PATH=$this/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$this/lib64:$LD_LIBRARY_PATH
 ```
 
-####cudnn
+###cudnn
 ------------
 
 Download the cudnn 5.1 and extraced to `~/usr/cuda/7.5v5.1` as `$cudnn_root`
 
-####login_rc
+###login_rc
 -----------------
 ```
 source ~/use_gcc_4.9.4.sh
@@ -70,7 +70,7 @@ source activate ~/conda_env
 ```
 
 
-####Bazel
+###Bazel
 ------------
 
 1. `git clone https://github.com/bazelbuild/bazel.git && cd bazel`
@@ -92,7 +92,7 @@ source activate ~/conda_env
 5. `./compile.sh`
 
 
-####TensorFlow
+###TensorFlow
 ----------------
 
 1. use `source use_gcc_4.9.4.sh` to change the compile environment 
@@ -138,5 +138,5 @@ print(sess.run(hello))
 ###Reference
 ---------------
 
-http://stackoverflow.com/questions/33655731/error-while-importing-tensorflow-in-python2-7-in-ubuntu-12-04-glibc-2-17-not-f
-https://github.com/tensorflow/tensorflow/issues/110#issuecomment-201834137
+* http://stackoverflow.com/questions/33655731/error-while-importing-tensorflow-in-python2-7-in-ubuntu-12-04-glibc-2-17-not-f
+* https://github.com/tensorflow/tensorflow/issues/110#issuecomment-201834137
