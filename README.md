@@ -51,6 +51,25 @@ export LD_LIBRARY_PATH=$this/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$this/lib64:$LD_LIBRARY_PATH
 ```
 
+####cudnn
+------------
+
+Download the cudnn 5.1 and extraced to `~/usr/cuda/7.5v5.1` as `$cudnn_root`
+
+####login_rc
+-----------------
+```
+source ~/use_gcc_4.9.4.sh
+vpkg_require cuda/7.5
+PATH=~/usr/cuda/7.5v5.1/include:$PATH
+export LD_LIBRARY_PATH=~/usr/cuda/7.5v5.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/shared/cuda/7.5.18/lib64:/opt/shared/cuda/7.5.18/extras/CUPTI/lib64"
+export CUDA_HOME=/opt/shared/cuda/7.5.18
+vpkg_require anaconda/2.5.0:python2
+source activate ~/conda_env
+```
+
+
 ####Bazel
 ------------
 
