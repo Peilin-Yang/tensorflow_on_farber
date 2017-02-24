@@ -122,3 +122,21 @@ source activate ~/conda_env
 8. `bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg`
     
 9. `pip install --upgrade /tmp/tensorflow_pkg//tensorflow-1.0.0-cp27-cp27mu-linux_x86_64.whl`
+
+
+###TEST
+------------
+
+```python
+import tensorflow as tf
+
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+```
+
+###Reference
+---------------
+
+http://stackoverflow.com/questions/33655731/error-while-importing-tensorflow-in-python2-7-in-ubuntu-12-04-glibc-2-17-not-f
+https://github.com/tensorflow/tensorflow/issues/110#issuecomment-201834137
