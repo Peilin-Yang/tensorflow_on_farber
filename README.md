@@ -76,12 +76,23 @@ export LD_LIBRARY_PATH=$this/lib64:$LD_LIBRARY_PATH
 ####TensorFlow
 ----------------
 
-use `source use_gcc_4.9.4.sh` to change the compile environment 
+1. use `source use_gcc_4.9.4.sh` to change the compile environment 
 
-1. ```
+2. Download tensorflow from source 
+ ```
  git clone https://github.com/tensorflow/tensorflow
  cd tensorflow
  git checkout r1.0
  ```
- 
-2. 
+
+3. Edit `third_party/gpus/crosstool/CROSSTOOL`, making the same changes we made for Bazel. (/usr/bin/gcc etc. likely won't need to be replaced, though.)
+
+4. Edit `third_party/gpus/crosstool/clang/bin/crosstool_wrapper_driver_is_not_gcc` Replace all `/usr/bin/gcc` with `gcc path`.
+
+5. If you're not using default system gcc (e.g. if you had to compile newer gcc, like discussed above), add the following linker flags to `tensorflow/third_party/gpus/crosstool/CROSSTOOL.tpl`, line 59:
+  `linker_flag: "-L/home/username/localinst/opt/gcc-4.9.4/lib64"`
+  `linker_flag: "-Wl,-rpath,/home/username/localinst/opt/gcc-4.9.4/lib64"`
+  
+ `./configure`
+ disable `jemalloc`
+ enable `cuda` and `cudnn`
