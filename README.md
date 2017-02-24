@@ -57,16 +57,16 @@ export LD_LIBRARY_PATH=$this/lib64:$LD_LIBRARY_PATH
 1. `git clone https://github.com/bazelbuild/bazel.git && cd bazel`
 
 2. Edit `tools/cpp/CROSSTOOL`
-  Replace all occurrences of /usr/bin/gcc with gcc path
-  Replace all occurrences of /usr/bin/cpp with cpp path
-  After the toolpath containing gcc path, add the lines
-    linker_flag: "-Wl,-Rlib64 path"
-    cxx_builtin_include_directory: "include1 dir"
-    cxx_builtin_include_directory: "include2 dir"
-    cxx_builtin_include_directory: "include3 dir"
+  ⋅⋅*Replace all occurrences of /usr/bin/gcc with gcc path
+  ⋅⋅*Replace all occurrences of /usr/bin/cpp with cpp path
+  ⋅⋅*After the toolpath containing gcc path, add the lines
+    ⋅⋅*linker_flag: "-Wl,-Rlib64 path"
+    ⋅⋅*cxx_builtin_include_directory: "include1 dir"
+    ⋅⋅*cxx_builtin_include_directory: "include2 dir"
+    ⋅⋅*cxx_builtin_include_directory: "include3 dir"
 
 3. Edit `scripts/bootstrap/buildenv.sh`
-  Comment out `atexit "rm -fr ${DIR}"`
+  ⋅⋅*Comment out `atexit "rm -fr ${DIR}"`
   
 4. `export EXTRA_BAZEL_ARGS='-s --verbose_failures --ignore_unsupported_sandboxing --genrule_strategy=standalone --spawn_strategy=standalone --jobs 8'`
 
