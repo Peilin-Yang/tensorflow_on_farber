@@ -2,6 +2,9 @@
 
 #### GCC
 --------------
+Download the GCC 4.9.4 from source, compile, install.
+_this is because of `as` error in bazel_
+
 ```
 #!/bin/sh
 
