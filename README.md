@@ -39,6 +39,20 @@ make
 make install
 ```
 
+Create a separate `use_gcc_4.9.4.sh` file, with necessary environment variables.
+```
+#!/bin/sh
+this=$HOME/opt/gcc-4.9.4
+export PATH=$this/bin:$PATH
+export CPATH=$this/include:$CPATH
+export LIBRARY_PATH=$this/lib:$LIBRARY_PATH
+export LIBRARY_PATH=$this/lib64:$LIBRARY_PATH
+export LD_LIBRARY_PATH=$this/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$this/lib64:$LD_LIBRARY_PATH
+```
+
+use `source use_gcc_4.9.4.sh` to change the compile environment 
+
 1. ```
  git clone https://github.com/tensorflow/tensorflow
  cd tensorflow
