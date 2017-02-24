@@ -121,4 +121,4 @@ source activate ~/conda_env
 
 8. `bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg`
     
-9. `pip install --upgrade /tmp/tensorflow_pkg/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl`
+9. `pip install --upgrade /tmp/tensorflow_pkg//tensorflow-1.0.0-cp27-cp27mu-linux_x86_64.whl`
