@@ -109,9 +109,10 @@ source activate ~/conda_env
 4. Edit `third_party/gpus/crosstool/clang/bin/crosstool_wrapper_driver_is_not_gcc` Replace all `/usr/bin/gcc` with `gcc path`.
 
 5. If you're not using default system gcc (e.g. if you had to compile newer gcc, like discussed above), add the following linker flags to `tensorflow/third_party/gpus/crosstool/CROSSTOOL.tpl`, line 59:
-  `linker_flag: "-L/home/username/localinst/opt/gcc-4.9.4/lib64"`
-  `linker_flag: "-Wl,-rpath,/home/username/localinst/opt/gcc-4.9.4/lib64"`
+  * `linker_flag: "-L/home/username/localinst/opt/gcc-4.9.4/lib64"`
+  * `linker_flag: "-Wl,-rpath,/home/username/localinst/opt/gcc-4.9.4/lib64"`
   
- `./configure`
- disable `jemalloc`
- enable `cuda` and `cudnn`
+6. `./configure`
+ * disable `jemalloc`
+ * enable `cuda` and `cudnn`
+ * others with default (press `Enter`)
