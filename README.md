@@ -116,3 +116,9 @@ source activate ~/conda_env
  * disable `jemalloc`
  * enable `cuda` and `cudnn`
  * others with default (press `Enter`)
+ 
+7. `bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package`
+
+8. `bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg`
+    
+9. `pip install --upgrade /tmp/tensorflow_pkg/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl`
